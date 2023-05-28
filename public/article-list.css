@@ -1,0 +1,15 @@
+article {
+	margin-bottom: 2rem;
+}
+
+article:hover p {
+	opacity: 1;
+}
+
+h2 {
+	padding-bottom: 0.8rem;
+}
+
+p {
+	opacity: 0.5;
+}
