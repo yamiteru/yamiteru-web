@@ -5,7 +5,8 @@
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start",
-    "script:images": "tsx scripts/images.ts"
+    "script:images": "tsx scripts/images.ts",
+    "check": "pnpm biome check --write"
   },
   "dependencies": {
     "@solidjs/meta": "0.29.4",
@@ -18,6 +19,7 @@
     "node": ">=18"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.0",
     "sharp": "0.33.4",
     "tsx": "4.12.0",
     "typescript": "5.4.5"

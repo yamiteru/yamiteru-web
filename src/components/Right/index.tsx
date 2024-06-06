@@ -1,12 +1,12 @@
+import { Title } from "@solidjs/meta";
 import type { Component } from "solid-js";
-import styles from "./index.module.css";
 import { SectionAbout } from "../../sections/SectionAbout";
-import { SectionWork } from "../../sections/SectionWork";
 import { SectionSkills } from "../../sections/SectionSkills";
 import { SectionStudy } from "../../sections/SectionStudy";
+import { SectionWork } from "../../sections/SectionWork";
 import { section, setSection } from "../../stores/navigation";
 import { useKeypress } from "../../utils/useKeypress";
-import { Title } from "@solidjs/meta";
+import styles from "./index.module.css";
 
 export const Right: Component = () => {
 	const sections = ["About", "Work", "Skills", "Study"];

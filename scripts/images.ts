@@ -1,4 +1,4 @@
-import { readdir, readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import sharp from "sharp";
 
 const INPUT = "images";
@@ -10,7 +10,7 @@ const images = await readdir(INPUT);
 await Promise.all(
 	images.map(async (image) => {
 		const file = await readFile(`images/${image}`);
-    const name = image.slice(0, image.indexOf("."));
+		const name = image.slice(0, image.indexOf("."));
 
 		await Promise.all([
 			sharp(file)

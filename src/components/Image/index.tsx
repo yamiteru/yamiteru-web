@@ -1,4 +1,4 @@
-import { createSignal, onMount, type Component } from "solid-js";
+import { type Component, createSignal, onMount } from "solid-js";
 import styles from "./index.module.css";
 
 const SIZES = [320, 480, 720, 1280, 1920];

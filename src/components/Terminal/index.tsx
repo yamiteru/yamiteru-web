@@ -1,9 +1,9 @@
 import type { Component, JSXElement } from "solid-js";
-import { createSignal, For, onMount } from "solid-js";
-import { Card } from "../Card";
-import styles from "./index.module.css";
-import { Text } from "../Text";
+import { For, createSignal, onMount } from "solid-js";
 import { setTerminal } from "../../stores/navigation";
+import { Card } from "../Card";
+import { Text } from "../Text";
+import styles from "./index.module.css";
 
 const [buffer, setBuffer] = createSignal<JSXElement[]>([], { equals: false });
 

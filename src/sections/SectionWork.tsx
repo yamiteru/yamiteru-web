@@ -1,12 +1,12 @@
 import type { Component } from "solid-js";
-import { Section } from "../components/Section";
+import { Dynamic } from "solid-js/web";
+import { Card } from "../components/Card";
 import { Experience } from "../components/Experience";
+import { Library } from "../components/Library";
+import { Section } from "../components/Section";
 import { Switcher } from "../components/Switcher";
 import { section, setWork, work } from "../stores/navigation";
-import { Card } from "../components/Card";
 import { useKeypress } from "../utils/useKeypress";
-import { Dynamic } from "solid-js/web";
-import { Library } from "../components/Library";
 
 export const SectionWork: Component = () => {
 	const index = 1;
@@ -28,7 +28,7 @@ export const SectionWork: Component = () => {
 			<Card>
 				<Switcher
 					items={items}
-					index={work()}
+					index={work}
 					onClick={(index) => setWork(index as any)}
 				/>
 			</Card>

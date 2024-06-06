@@ -7,18 +7,18 @@
 	"linter": {
 		"include": ["src", "scripts"],
 		"ignore": ["node_modules"],
-    "rules": {
-      "style": {
-        "noNonNullAssertion": "off"
-      },
-      "a11y": {
-        "useKeyWithClickEvents": "off",
-        "noSvgWithoutTitle": "off"
-      },
-      "suspicious": {
-        "noExplicitAny": "off"
-      }
-    }
+		"rules": {
+			"style": {
+				"noNonNullAssertion": "off"
+			},
+			"a11y": {
+				"useKeyWithClickEvents": "off",
+				"noSvgWithoutTitle": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off"
+			}
+		}
 	},
 	"formatter": {
 		"enabled": true,

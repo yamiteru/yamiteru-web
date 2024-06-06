@@ -1,13 +1,13 @@
 import type { Component } from "solid-js";
-import { Section } from "../components/Section";
+import { Dynamic } from "solid-js/web";
 import { Card } from "../components/Card";
 import { Display } from "../components/Display";
 import { Layout } from "../components/Layout";
-import { Text } from "../components/Text";
+import { Section } from "../components/Section";
 import { Switcher } from "../components/Switcher";
+import { Text } from "../components/Text";
 import { section, setSkills, skills } from "../stores/navigation";
 import { useKeypress } from "../utils/useKeypress";
-import { Dynamic } from "solid-js/web";
 
 export const SectionSkills: Component = () => {
 	const index = 2;
@@ -29,7 +29,7 @@ export const SectionSkills: Component = () => {
 			<Card>
 				<Switcher
 					items={items}
-					index={skills()}
+					index={skills}
 					onClick={(index) => setSkills(index as any)}
 				/>
 			</Card>

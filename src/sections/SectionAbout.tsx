@@ -1,10 +1,10 @@
 import type { Component } from "solid-js";
-import { Section } from "../components/Section";
 import { Card } from "../components/Card";
 import { Display } from "../components/Display";
-import { Layout } from "../components/Layout";
-import { Switcher } from "../components/Switcher";
 import { Image } from "../components/Image";
+import { Layout } from "../components/Layout";
+import { Section } from "../components/Section";
+import { Switcher } from "../components/Switcher";
 import { Text } from "../components/Text";
 import { about, section, setAbout } from "../stores/navigation";
 import { useKeypress } from "../utils/useKeypress";
@@ -40,12 +40,12 @@ export const SectionAbout: Component = () => {
 				<Layout>
 					<div>
 						<Switcher
-							index={about()}
+							index={about}
 							items={items}
 							onClick={(index) => setAbout(index as any)}
-						>
-							<Image src={images[about()]} alt={items[about()]} />
-						</Switcher>
+						/>
+
+						<Image src={images[about()]} alt={items[about()]} />
 					</div>
 
 					<Text>

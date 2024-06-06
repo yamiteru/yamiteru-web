@@ -1,8 +1,8 @@
 import type { Component, JSXElement } from "solid-js";
-import styles from "./index.module.css";
-import { Text } from "../Text";
 import { section, setSection } from "../../stores/navigation";
 import { Paper } from "../Paper";
+import { Text } from "../Text";
+import styles from "./index.module.css";
 
 export const Section: Component<{
 	title: string;

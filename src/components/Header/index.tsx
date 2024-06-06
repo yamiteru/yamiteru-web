@@ -1,8 +1,8 @@
 import type { Component } from "solid-js";
-import styles from "./index.module.css";
 import { Card } from "../Card";
 import { Display } from "../Display";
 import { Text } from "../Text";
+import styles from "./index.module.css";
 
 export const Header: Component = (props) => {
 	return (

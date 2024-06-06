@@ -1,7 +1,7 @@
 import type { Component } from "solid-js";
 import { createSignal, onCleanup } from "solid-js";
-import styles from "./index.module.css";
 import { Text } from "../Text";
+import styles from "./index.module.css";
 
 const getTime = () =>
 	new Intl.DateTimeFormat("default", {
