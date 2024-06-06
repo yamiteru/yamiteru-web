@@ -1,0 +1,27 @@
+.switcher {
+  display: flex;
+  flex-direction: column;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-small);
+  padding-bottom: var(--space-big);
+
+  &[data-children="true"] {
+    padding-bottom: var(--space-normal);
+  }
+}
+
+.option {
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+}
+
+.active {
+  color: var(--color-accent);
+}

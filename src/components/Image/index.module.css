@@ -1,0 +1,22 @@
+.image {
+  position: relative;
+  width: 100%;
+  display: flex;
+  background-color: var(--color-accent);
+  transition: background-color var(--transition-duration) ease-in-out;
+
+  &:hover {
+    background-color: black;
+  }
+}
+
+.picture {
+  width: 100%;
+  filter: saturate(0);
+  mix-blend-mode: screen;
+  transition: filter var(--transition-duration) ease-in-out;
+
+  &:hover {
+    filter: saturate(1);
+  }
+}

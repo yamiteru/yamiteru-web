@@ -1,1 +1,1 @@
-# yamiteru-web
+# Yamiteru

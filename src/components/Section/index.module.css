@@ -1,0 +1,109 @@
+.section {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100% - (3 * var(--space-big)) + 1px);
+  height: 100vh;
+  display: grid;
+  grid-template-columns: var(--space-big) 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". .";
+  background-color: var(--color-background);
+  transition: transform var(--transition-duration) ease-in-out;
+  overflow: hidden;
+
+  &[data-index="0"] {
+    z-index: 0;
+    transform: translateX(0px);
+
+    &[data-active="true"] {
+      transform: translateX(calc(0 * var(--space-big) - 0px));
+    }
+  }
+
+  &[data-index="1"] {
+    z-index: 1;
+    transform: translateX(calc(100% - (0 * var(--space-big) - 3px)));
+
+    &[data-active="true"] {
+      transform: translateX(calc(1 * var(--space-big) - 1px));
+    }
+  }
+
+  &[data-index="2"] {
+    z-index: 2;
+    transform: translateX(calc(100% - (-1 * var(--space-big) - 2px)));
+
+    &[data-active="true"] {
+      transform: translateX(calc(2 * var(--space-big) - 2px));
+    }
+  }
+
+  &[data-index="3"] {
+    z-index: 3;
+    transform: translateX(calc(100% - (-2 * var(--space-big) - 1px)));
+
+    &[data-active="true"] {
+      transform: translateX(calc(3 * var(--space-big) - 3px));
+    }
+  }
+}
+
+.strip {
+  height: 100vh;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-normal) 0;
+  cursor: pointer;
+}
+
+.title {
+  text-orientation: sideways;
+  writing-mode: vertical-lr;
+  position: relative;
+}
+
+.tilde {
+  opacity: 0;
+  transition: opacity var(--transition-duration) ease-in-out;
+
+  &[data-active="true"] {
+    opacity: 1;
+  }
+}
+
+.title_span {
+  position: absolute;
+  top: 0;
+  transform: translateY(0px);
+
+  &[data-active="true"] {
+    transform: translateY(20px);
+  }
+}
+
+.span {
+  color: black;
+  transition: all var(--transition-duration) ease-in-out;
+
+  &[data-active="true"] {
+    color: var(--color-accent);
+  }
+}
+
+.content {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 0 var(--space-normal) var(--space-big) var(--space-normal);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  position: relative;
+
+  &::-webkit-scrollbar {
+      width: 0px;
+  }
+}

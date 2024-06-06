@@ -1,0 +1,8 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr var(--size-text);
+  grid-template-rows: 1fr;
+  gap: 0px var(--space-normal);
+  grid-template-areas:
+    ". .";
+}

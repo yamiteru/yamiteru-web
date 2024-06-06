@@ -1,0 +1,14 @@
+.info {
+  height: var(--space-big);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-normal);
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-small);
+}

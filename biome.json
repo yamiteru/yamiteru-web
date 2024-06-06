@@ -1,0 +1,38 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
+	"files": {
+		"include": ["src", "scripts"],
+		"ignore": ["node_modules"]
+	},
+	"linter": {
+		"include": ["src", "scripts"],
+		"ignore": ["node_modules"],
+    "rules": {
+      "style": {
+        "noNonNullAssertion": "off"
+      },
+      "a11y": {
+        "useKeyWithClickEvents": "off",
+        "noSvgWithoutTitle": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "off"
+      }
+    }
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"attributePosition": "auto",
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineEnding": "lf",
+		"lineWidth": 80,
+		"include": ["src", "scripts"],
+		"ignore": ["node_modules"]
+	},
+	"organizeImports": {
+		"include": ["src", "scripts"],
+		"ignore": ["node_modules"]
+	}
+}

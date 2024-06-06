@@ -1,0 +1,12 @@
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  padding-bottom: 17px;
+}
+
+.company {
+  margin-top: auto;
+}

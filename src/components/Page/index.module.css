@@ -1,0 +1,14 @@
+.page {
+  display: grid;
+  grid-template-columns: calc(var(--size-text) + (2 * var(--space-normal))) 1fr;
+  grid-template-rows: 1fr;
+  gap: 0 0;
+  grid-template-areas:
+    ". .";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-background);
+}
