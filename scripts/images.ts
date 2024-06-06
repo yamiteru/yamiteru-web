@@ -12,18 +12,8 @@ await Promise.all(
 		const file = await readFile(`images/${image}`);
 		const name = image.slice(0, image.indexOf("."));
 
-		await Promise.all([
-			sharp(file)
-				.resize(10)
-				.jpeg({
-					quality: 1,
-					trellisQuantisation: true,
-					overshootDeringing: true,
-					optimiseScans: true,
-					quantizationTable: 8,
-				})
-				.toFile(`${OUTPUT}/${name}-10.jpeg`),
-			...SIZES.map(async (size) => {
+		await Promise.all(
+			SIZES.map(async (size) => {
 				await Promise.all([
 					sharp(file)
 						.resize(size)
@@ -55,6 +45,6 @@ await Promise.all(
 						.toFile(`${OUTPUT}/${name}-${size}.jpeg`),
 				]);
 			}),
-		]);
+		);
 	}),
 );
