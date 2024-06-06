@@ -1,5 +1,5 @@
 .display {
-  font-family: "SF Pro Display", -apple-system,
+  font-family: "SF Pro Display", "SF Display", ui-sans-serif, -apple-system,
     "BlinkMacSystemFont", "Helvetica Neue","Segoe UI", Roboto, Arial,
     sans-serif;
   font-size: var(--text-display);
