@@ -1,6 +1,7 @@
 import "./app.css";
 
 import { Link, Meta, MetaProvider, Title } from "@solidjs/meta";
+import { Background } from "./components/Background";
 import { Page } from "./components/Page";
 
 export default function App() {
@@ -53,6 +54,7 @@ export default function App() {
 				</filter>
 			</svg>
 
+			<Background />
 			<Page />
 		</MetaProvider>
 	);

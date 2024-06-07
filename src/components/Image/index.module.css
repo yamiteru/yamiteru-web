@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   display: flex;
-  background-color: var(--color-accent);
+  background-color: var(--color-background-accent);
   transition: background-color var(--transition-duration) ease-in-out;
 
   &:hover {

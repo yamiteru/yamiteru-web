@@ -1,5 +1,6 @@
 :root {
   --color-background: #e1e2e7;
+  --color-background-accent: #243482;
   --color-accent: #2E45B8;
   --color-text: black;
   --space-small: 15px;
@@ -22,7 +23,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #242424;
+    --color-background: #000000;
+    --color-background-accent: #775628;
     --color-accent: #dba457;
     --color-text: white;
   }
