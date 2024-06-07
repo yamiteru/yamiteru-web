@@ -4,4 +4,5 @@
   font-size: var(--text-normal);
   font-weight: 400;
   white-space: pre-wrap;
+  max-width: 650px;
 }

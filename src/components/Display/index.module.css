@@ -7,4 +7,5 @@
   padding-bottom: var(--space-big);
   margin-top: calc(-1 * (var(--text-display) / 5));
   white-space: pre-wrap;
+  max-width: 1300px;
 }
