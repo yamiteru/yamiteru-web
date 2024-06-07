@@ -1,12 +1,25 @@
 import "./app.css";
 
-import { MetaProvider, Title } from "@solidjs/meta";
+import { Meta, MetaProvider, Title } from "@solidjs/meta";
 import { Page } from "./components/Page";
 
 export default function App() {
 	return (
 		<MetaProvider>
 			<Title>Yamiteru</Title>
+			<Meta
+				name="description"
+				content="I'm a software engineer with over 10 years of experience and a knack for design, who enjoys bouldering—even if it means repeatedly falling off the walls!"
+			/>
+			<Meta property="og:title" content="Yamiteru" />
+			<Meta property="og:type" content="website" />
+			<Meta property="og:image" content="/images/og-image.png" />
+			<Meta property="og:url" content="https://yamiteru.cz" />
+			<Meta
+				property="og:description"
+				content="I'm a software engineer with over 10 years of experience and a knack for design, who enjoys bouldering—even if it means repeatedly falling off the walls!"
+			/>
+
 			<svg style="width: 0; height: 0;">
 				<filter id="paper">
 					<feTurbulence
@@ -30,6 +43,7 @@ export default function App() {
 					/>
 				</filter>
 			</svg>
+
 			<Page />
 		</MetaProvider>
 	);
