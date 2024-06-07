@@ -7,6 +7,8 @@
 
 .option {
   cursor: pointer;
+  color: var(--color-text);
+  transition: color var(--transition-duration) ease-in-out;
 
   &:hover {
     color: var(--color-accent);
