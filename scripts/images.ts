@@ -1,7 +1,7 @@
 import { readFile, readdir } from "node:fs/promises";
 import sharp from "sharp";
 
-const INPUT = "images";
+const INPUT = "tmp";
 const OUTPUT = "public/about";
 const SIZES = [320, 480, 720, 1280, 1920];
 
