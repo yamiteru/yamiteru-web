@@ -1,0 +1,118 @@
+.section {
+    --head-width: calc(3 * var(--space));
+    --percent: 0%;
+    --index: 0;
+    --offset: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(calc(var(--percent) + (var(--index) * var(--head-width)) - (1px * var(--offset))));
+    will-change: transform;
+    width: calc(100% - (3 * var(--head-width)) + 3px);
+    height: 100%;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: var(--head-width) 1fr;
+    gap: 0;
+    transition: transform var(--transition-duration) var(--transition-function);
+    background-color: var(--color-background);
+
+    &[data-index="0"] {
+        --percent: 0%;
+        --index: 0;
+        --offset: 0;
+    }
+
+    &[data-index="1"] {
+        --percent: 100%;
+        --index: 0;
+        --offset: 1;
+    }
+
+    &[data-index="2"] {
+        --percent: 100%;
+        --index: 1;
+        --offset: 2;
+    }
+
+    &[data-index="3"] {
+        --percent: 100%;
+        --index: 2;
+        --offset: 3;
+    }
+
+    &[data-active="true"] {
+        transform: translateX(calc((var(--offset) * var(--head-width)) - (1px * var(--offset))));
+    }
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space) 0;
+    border-left: var(--border);
+    border-right: var(--border);
+    cursor: pointer;
+    background-color: var(--color-background);
+
+    &[data-active="true"] {
+        .state{
+            transform: translateX(0%);
+        }
+    }
+
+    &[data-active="false"] {
+        &:hover {
+            .state{
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+.indicator {
+    width: var(--space);
+    height: var(--space);
+    border-radius: var(--space);
+    border: var(--border);
+    overflow: hidden;
+    position: relative;
+}
+
+.state {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: var(--space);
+    height: var(--space);
+    background-color: var(--color-foreground);
+    transition: transform var(--transition-duration) var(--transition-function);
+}
+
+.title {
+    text-orientation: sideways;
+    writing-mode: vertical-lr;
+    position: relative;
+    padding-top: var(--space);
+}
+
+.bottom {
+    width: var(--space);
+    border-bottom: var(--border);
+}
+
+.body {
+		position: relative;
+    padding: var(--space);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}

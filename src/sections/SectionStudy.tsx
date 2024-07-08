@@ -1,50 +1,19 @@
 import type { Component } from "solid-js";
+import { createSignal } from "solid-js";
 import { Dynamic } from "solid-js/web";
-import { Card } from "../components/Card";
-import { Experience } from "../components/Experience";
-import { Resource } from "../components/Resource";
-import { Section } from "../components/Section";
-import { Switcher } from "../components/Switcher";
-import { section, setStudy, study } from "../stores/navigation";
-import { useKeypress } from "../utils/useKeypress";
+import { Item } from "~/components/Item/Item";
+import { Section } from "~/components/Section/Section";
+import { Study } from "~/components/Study/Study";
+import { Switcher } from "~/components/Switcher/Switcher";
 
-export const SectionStudy: Component = () => {
-	const index = 3;
-	const items = ["Education", "Books", "Papers"];
-	const components = [StudyEducation, StudyBooks, StudyPapers];
-
-	useKeypress((key) => {
-		if (section() === index) {
-			const itemIndex = items.findIndex((item) => item[0] === key.slice(3));
-
-			if (itemIndex >= 0) {
-				setStudy(itemIndex as any);
-			}
-		}
-	});
-
-	return (
-		<Section title="Study" index={index}>
-			<Card>
-				<Switcher
-					items={items}
-					index={study}
-					onClick={(index) => setStudy(index as any)}
-				/>
-			</Card>
-
-			<Dynamic component={components[study()]} />
-		</Section>
-	);
-};
-
-const StudyEducation: Component = () => {
+const StudyScreen: Component = () => {
 	return (
 		<>
-			<Experience
-				date="2015 - 2018"
+			<Study
+				from="2015"
+				to="2018"
 				title="Software Engineering"
-				company="University of West Bohemia"
+				school="University of West Bohemia"
 			>
 				I have developed a deep understanding of how computers work on a
 				fundamental level, encompassing algorithms, data structures, and
@@ -70,11 +39,13 @@ const StudyEducation: Component = () => {
 				equipped me with the skills to excel in web development, bridging the
 				gap between low-level computing concepts and high-level application
 				development to create robust, high-performing software solutions.
-			</Experience>
-			<Experience
-				date="2011 - 2015"
+			</Study>
+
+			<Study
+				from="2011"
+				to="2015"
 				title="Multimedia"
-				company="Střední odborná škola obchodu, užitého umění a designu"
+				school="Střední odborná škola obchodu, užitého umění a designu"
 			>
 				I have excelled in graphic design, photography, and web
 				design/programming by dedicating most of my time after school to
@@ -96,117 +67,135 @@ const StudyEducation: Component = () => {
 				continuous learning and practical application of skills have laid a
 				solid foundation for my professional career, blending creativity with
 				technical proficiency.
-			</Experience>
+			</Study>
 		</>
 	);
 };
 
-const StudyBooks: Component = () => {
+const BooksScreen: Component = () => {
 	return (
 		<>
-			<Resource
-				author="Samuel Kounev, Klaus-Dieter Lange, Jóakim von Kistowski"
+			<Item
 				title="Systems Benchmarking For Scientists and Engineers"
+				other="Samuel Kounev, Klaus-Dieter Lange, Jóakim von Kistowski"
 			/>
-			<Resource
-				author="Charles Wheelan"
+			<Item
 				title="Naked Statistics: Stripping the Dread from the Data"
+				other="Charles Wheelan"
 			/>
-			<Resource
-				author="Stephen Blackheath"
+			<Item
 				title="Functional Reactive Programming"
+				other="Stephen Blackheath"
 			/>
-			<Resource
-				author="Thomas Hunter II and Bryan English"
+			<Item
 				title="Multithreaded Javascript"
+				other="Thomas Hunter II and Bryan English"
 			/>
-			<Resource author="JJ Geewax" title="API Design Patterns" />
-			<Resource
-				author="Jack Dougherty, Ilya Ilyankou"
+			<Item title="API Design Patterns" other="JJ Geewax" />
+			<Item
 				title="Hands-On Data Visualization"
+				other="Jack Dougherty, Ilya Ilyankou"
 			/>
-			<Resource
-				author="Mark Richards, Neal Ford"
+			<Item
 				title="Fundamentals of Software Architecture"
+				other="Mark Richards, Neal Ford"
 			/>
-			<Resource
-				author="Titus Winters, Tom Manshreck, Hyrum Wright"
+			<Item
 				title="Software Engineering at Google"
+				other="Titus Winters, Tom Manshreck, Hyrum Wright"
 			/>
-			<Resource
-				author="Denise Gosnell, Matthias Broecheler"
+			<Item
 				title="The Practitioner's Guide to Graph Data: Applying Graph Thinking and Graph Technologies to Solve Complex Problems"
+				other="Denise Gosnell, Matthias Broecheler"
 			/>
-			<Resource
-				author="Michael J. Hernandez"
+			<Item
 				title="Database Design for Mere Mortals"
+				other="Michael J. Hernandez"
 			/>
-			<Resource
-				author="Alex Petrov"
+			<Item
 				title="Database Internals: A Deep Dive into How Distributed Data Systems Work"
+				other="Alex Petrov"
 			/>
-			<Resource
-				author="Michele Bertoli"
+			<Item
 				title="React Design Patterns and Best Practices"
+				other="Michele Bertoli"
 			/>
-			<Resource
-				author="Roy Derks"
+			<Item
 				title="React Projects: Build 12 real-world applications from scratch using React, React Native, and React 360"
+				other="Roy Derks"
 			/>
-			<Resource
-				author="Andrea Chiarelli"
+			<Item
 				title="Beginning React: Simplify your frontend development workflow and enhance the user experience of your applications with React"
+				other="Andrea Chiarelli"
 			/>
-			<Resource author="Artemij Fedosejev" title="React.js Essentials" />
-			<Resource
-				author="Ajdin Imsirovic"
+			<Item title="React.js Essentials" other="Artemij Fedosejev" />
+			<Item
 				title="Vue.js Quick Start Guide: Learn how to build amazing and complex reactive web applications easily using Vue.js"
+				other="Ajdin Imsirovic"
 			/>
-			<Resource
-				author="Heitor Ramon Ribeiro"
+			<Item
 				title="Vue.js 3 Cookbook: Discover actionable solutions for building modern web apps with the latest Vue features and TypeScript"
+				other="Heitor Ramon Ribeiro"
 			/>
 		</>
 	);
 };
 
-const StudyPapers: Component = () => {
+const PapersScreen: Component = () => {
 	return (
 		<>
-			<Resource title="Taming Performance Variability" />
-			<Resource title="A Statistics-Based Performance Testing Methodology for Cloud Applications" />
-			<Resource title="Applying test case prioritization to software microbenchmarks" />
-			<Resource title="A Survey of Methods for Time Series Change Point Detection" />
-			<Resource title="Bayesian Online Changepoint Detection" />
-			<Resource title="BAYESIAN ONLINE CHANGE POINT DETECTION FOR BASELINE SHIFTS" />
-			<Resource title="Conducting Repeatable Experiments in Highly Variable Cloud Computing Environments" />
-			<Resource title="Deliberate Microbenchmarking of Software Systems" />
-			<Resource title="Evaluation of Inter-Process Communication Mechanisms" />
-			<Resource title="Interprocess Communication: Memory mapped files and pipes" />
-			<Resource title="Duet Benchmarking: Improving Measurement Accuracy in the Cloud" />
-			<Resource title="Investigating Managed Language Runtime Performance: Why JavaScript and Python are 8x and 29x slower than C++, yet Java and Go can be Faster?" />
-			<Resource title="Jalangi: A Tool Framework for Concolic Testing, Selective Record-Replay, and Dynamic Analysis of JavaScript" />
-			<Resource title="More for Your Money: Exploiting Performance Heterogeneity in Public Clouds" />
-			<Resource title="Noise in the Clouds: Influence of Network Performance Variability on Application Scalability" />
-			<Resource title="Of JavaScript AOT Compilation Performance" />
-			<Resource title="Operating System Noise in the Linux Kernel" />
-			<Resource title="Operating System Noise: Linux vs. Microkernel" />
-			<Resource title="Overhead of Deoptimization Checks in the V8 JavaScript Engine" />
-			<Resource title="Patterns in the Chaos - a Study of Performance Variation and Predictability in Public IaaS Clouds" />
-			<Resource title="Performance Analysis with Bayesian Inference" />
-			<Resource title="Pilot: A Framework that Understands How to Do Performance Benchmarks the Right Way" />
-			<Resource title="Producing Wrong Data Without Doing Anything Obviously Wrong!" />
-			<Resource title="Rigorous Benchmarking in Reasonable Time" />
-			<Resource title="Robust benchmarking in noisy environments" />
-			<Resource title="STABILIZER: Statistically Sound Performance Evaluation" />
-			<Resource title="The Good, the Bad, and the Ugly: An Empirical Study of Implicit Type Conversions in JavaScript" />
-			<Resource title="The Night Shift: Understanding Performance Variability of Cloud Serverless Platform" />
-			<Resource title="Towards Continuous Benchmarking: An Automated Performance Evaluation Framework for High Performance Software" />
-			<Resource title="Towards effective assessment of steady state performance in Java software: are we there yet?" />
-			<Resource title="Using application benchmark call graphs to quantify and improve the practical relevance of microbenchmark suites" />
-			<Resource title="Using Microbenchmark Suites to Detect Application Performance Changes" />
-			<Resource title="Virtual Machine Warmup Blows Hot and Cold" />
-			<Resource title="WebAssembly versus JavaScript: Energy and Runtime Performance" />
+			<Item title="Taming Performance Variability" />
+			<Item title="A Statistics-Based Performance Testing Methodology for Cloud Applications" />
+			<Item title="Applying test case prioritization to software microbenchmarks" />
+			<Item title="A Survey of Methods for Time Series Change Point Detection" />
+			<Item title="Bayesian Online Changepoint Detection" />
+			<Item title="Bayesian Online Changepoint Detection for Baseline Shifts" />
+			<Item title="Conducting Repeatable Experiments in Highly Variable Cloud Computing Environments" />
+			<Item title="Deliberate Microbenchmarking of Software Systems" />
+			<Item title="Evaluation of Inter-Process Communication Mechanisms" />
+			<Item title="Interprocess Communication: Memory mapped files and pipes" />
+			<Item title="Duet Benchmarking: Improving Measurement Accuracy in the Cloud" />
+			<Item title="Investigating Managed Language Runtime Performance: Why JavaScript and Python are 8x and 29x slower than C++, yet Java and Go can be Faster?" />
+			<Item title="Jalangi: A Tool Framework for Concolic Testing, Selective Record-Replay, and Dynamic Analysis of JavaScript" />
+			<Item title="More for Your Money: Exploiting Performance Heterogeneity in Public Clouds" />
+			<Item title="Noise in the Clouds: Influence of Network Performance Variability on Application Scalability" />
+			<Item title="Of JavaScript AOT Compilation Performance" />
+			<Item title="Operating System Noise in the Linux Kernel" />
+			<Item title="Operating System Noise: Linux vs. Microkernel" />
+			<Item title="Overhead of Deoptimization Checks in the V8 JavaScript Engine" />
+			<Item title="Patterns in the Chaos - a Study of Performance Variation and Predictability in Public IaaS Clouds" />
+			<Item title="Performance Analysis with Bayesian Inference" />
+			<Item title="Pilot: A Framework that Understands How to Do Performance Benchmarks the Right Way" />
+			<Item title="Producing Wrong Data Without Doing Anything Obviously Wrong!" />
+			<Item title="Rigorous Benchmarking in Reasonable Time" />
+			<Item title="Robust benchmarking in noisy environments" />
+			<Item title="Stabilizer: Statistically Sound Performance Evaluation" />
+			<Item title="The Good, the Bad, and the Ugly: An Empirical Study of Implicit Type Conversions in JavaScript" />
+			<Item title="The Night Shift: Understanding Performance Variability of Cloud Serverless Platform" />
+			<Item title="Towards Continuous Benchmarking: An Automated Performance Evaluation Framework for High Performance Software" />
+			<Item title="Towards effective assessment of steady state performance in Java software: are we there yet?" />
+			<Item title="Using application benchmark call graphs to quantify and improve the practical relevance of microbenchmark suites" />
+			<Item title="Using Microbenchmark Suites to Detect Application Performance Changes" />
+			<Item title="Virtual Machine Warmup Blows Hot and Cold" />
+			<Item title="WebAssembly versus JavaScript: Energy and Runtime Performance" />
 		</>
+	);
+};
+
+const SCREENS = [StudyScreen, BooksScreen, PapersScreen];
+
+export const SectionStudy: Component = () => {
+	const [active, setActive] = createSignal(0);
+
+	return (
+		<Section title={"Study"} index={3}>
+			<Switcher
+				items={["Education", "Books", "Papers"]}
+				active={active}
+				setActive={setActive}
+			/>
+
+			<Dynamic component={SCREENS[active()]} />
+		</Section>
 	);
 };

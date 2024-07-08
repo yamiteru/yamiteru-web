@@ -1,0 +1,29 @@
+.general {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-rows: 162fr 108fr 72fr 48fr 32fr 21fr 14fr 9fr 6fr 4fr;
+    gap: 0;
+    padding: var(--space);
+		height: 100vh;
+}
+
+.part {
+    border-bottom: var(--border);
+
+    &:nth-child(1) {
+        border-top: var(--border);
+    }
+
+    &:nth-child(1), &:nth-child(2),&:nth-child(3) {
+        padding: var(--space) 0;
+    }
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+
+    & > a {
+        margin-bottom: 0.25rem;
+    }
+}

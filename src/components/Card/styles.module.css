@@ -1,0 +1,19 @@
+.card {
+    position: relative;
+    padding: var(--space) 0;
+    border-bottom: var(--border);
+
+    &:nth-child(1) {
+        border-top: var(--border);
+    }
+}
+
+.link {
+		text-decoration: none;
+
+		&:hover {
+			h2 {
+				text-decoration: underline;
+			}
+		}
+}

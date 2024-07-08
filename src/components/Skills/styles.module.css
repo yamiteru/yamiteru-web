@@ -1,0 +1,47 @@
+.skills {
+	display: table;
+	width: 100%;
+	border-collapse: separate;
+  border-spacing: 0;
+}
+
+.head {
+	display: table-header-group;
+
+	.cell {
+		&:nth-child(1) {
+			width: var(--width);
+		}
+	}
+}
+
+.body {
+	display: table-row-group;
+}
+
+.row {
+  display: table-row;
+
+	&:nth-last-child(1) {
+		&:not(&:nth-child(1)) {
+			.cell {
+				border-bottom: var(--border);
+			}
+		}
+	}
+}
+
+.cell {
+	display: table-cell;
+	padding: var(--space) 0;
+	border-top: var(--border);
+	text-align: center;
+
+	&:nth-child(1) {
+		text-align: left;
+	}
+}
+
+.active {
+	background-color: var(--color-foreground);
+}

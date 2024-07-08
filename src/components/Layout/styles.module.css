@@ -1,0 +1,6 @@
+.layout {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr var(--width);
+    gap: var(--space);
+}

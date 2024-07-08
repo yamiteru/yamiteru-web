@@ -1,0 +1,55 @@
+.portraits {
+    position: relative;
+    height: 100%;
+		isolation: isolate;
+
+		&:hover {
+			.display {
+				opacity: 0;
+			}
+		}
+}
+
+.portrait {
+    position: absolute;
+    height: calc(100% / 1.618);
+		aspect-ratio: 3 / 4;
+
+		&:nth-child(1) {
+			left: 0;
+			top: 0;
+			z-index: 3;
+		}
+
+		&:nth-child(2) {
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 2;
+		}
+
+		&:nth-child(3) {
+			right: 0;
+			bottom: 0;
+			z-index: 1;
+		}
+
+		&:hover {
+			z-index: 3;
+		}
+}
+
+.display {
+    writing-mode: vertical-lr;
+    color: white;
+    padding: var(--space);
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: var(--space);
+		z-index: 4;
+    user-select: none;
+    pointer-events: none;
+		opacity: 100;
+		transition: opacity var(--transition-duration) var(--transition-function);
+}

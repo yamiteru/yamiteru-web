@@ -1,0 +1,22 @@
+.cursor {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100vw;
+	height: 100vh;
+}
+
+.x {
+	position: absolute;
+	left: 0;
+	width: var(--space);
+	border-top: var(--border);
+}
+
+.y {
+	position: absolute;
+	top: 0;
+	height: var(--space);
+	border-left: var(--border);
+}

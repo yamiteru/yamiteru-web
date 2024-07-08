@@ -1,8 +1,0 @@
-.text {
-  font-family: "SF Pro Mono", 'SF Mono', SFMono-Regular, ui-monospace,
-    'DejaVu Sans Mono', Menlo, Consolas, 'Hack Nerd Font Mono', 'IBM Plex Mono', 'Fira Code', monospace;
-  font-size: var(--text-normal);
-  font-weight: 400;
-  white-space: pre-wrap;
-  max-width: 650px;
-}

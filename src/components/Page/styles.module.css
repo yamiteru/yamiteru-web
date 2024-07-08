@@ -1,0 +1,36 @@
+.page {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    max-width: 2200px;
+    max-height: 1375px;
+    overflow: hidden;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: var(--width) 1fr;
+    gap: 0;
+    background-color: var(--color-background);
+    opacity: 0;
+    animation-duration: calc(5 * var(--transition-duration));
+    animation-name: show;
+    animation-fill-mode: forwards;
+    animation-delay: var(--transition-duration);
+    animation-timing-function: ease-in-out;
+
+		@media (max-width: 1400px) {
+			grid-template-columns: 0px 1fr;
+		}
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

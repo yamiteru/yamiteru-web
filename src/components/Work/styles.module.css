@@ -1,0 +1,8 @@
+.work {
+	padding: var(--space);
+}
+
+.display {
+	display: flex;
+	flex-direction: column;
+}

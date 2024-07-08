@@ -1,0 +1,71 @@
+.eyes {
+    height: 100%;
+    padding: var(--space) 0;
+}
+
+.outside {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.left, .right, .pupil {
+    position: absolute;
+    border: var(--border);
+    border-radius: 100%;
+}
+
+.left, .right {
+    &:hover {
+        .label {
+            opacity: 1;
+        }
+
+        .pupil {
+            background-color: var(--color-foreground);
+        }
+    }
+}
+
+.left {
+    top: 0;
+    left: 0;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.right {
+    bottom: 0;
+    right: 0;
+    height: 62%;
+    aspect-ratio: 1 / 1;
+}
+
+.label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity var(--transition-duration) var(--transition-function);
+}
+
+.inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(0%, 0%);
+    transition: transform var(--transition-duration) var(--transition-function);
+}
+
+.pupil {
+    height: 24%;
+    aspect-ratio: 1 / 1;
+    top: 0;
+    left: 0;
+    transform: translate(0%, 0%);
+    transition: transform calc(20 * var(--transition-duration)) linear, background-color var(--transition-duration) var(--transition-function);
+    background-color: transparent;
+}

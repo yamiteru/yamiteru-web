@@ -1,64 +1,48 @@
-:root {
-  --color-background: #e1e2e7;
-  --color-background-accent: #243482;
-  --color-accent: #2E45B8;
-  --color-text: black;
-  --space-small: 15px;
-  --space-normal: 25px;
-  --space-big: 70px;
-  --size-text: 430px;
-  --text-display: 60px;
-  --text-normal: 16px;
-  --transition-duration: 0.25s;
-
-  @media screen and (max-width: 1600px) {
-    --space-small: 12px;
-    --space-normal: 20px;
-    --space-big: 50px;
-    --size-text: 330px;
-    --text-display: 40px;
-    --text-normal: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #000000;
-    --color-background-accent: #775628;
-    --color-accent: #dba457;
-    --color-text: white;
-  }
-}
-
-html {
-  color: var(--color-text);
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: none;
-  outline: none;
-}
-
-a {
-  color: var(--color-accent);
-  cursor: pointer;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration-line: underline;
-  text-decoration-style: wavy;
-}
-
-img {
-  width: 100%;
-  display: block;
+	display: block;
 }
 
 *::selection {
-  background: hsl(45, 95%, 85%);
-  color: black;
+  background: var(--color-accent);
+  color: white;
+}
+
+:root {
+  --space: 20px;
+  --border: 1px solid var(--color-foreground);
+  --width: 440px;
+
+  --color-background: #E9E9E9;
+  --color-foreground: #000000;
+  --color-accent: #2E45B8;
+
+  --transition-duration: 0.25s;
+  --transition-function: ease-in-out;
+}
+
+@media (max-width: 1400px) {
+	:root {
+		--space: 15px;
+	}
+}
+
+html {
+  background-color: var(--color-foreground);
+  color: var(--color-foreground);
+  font-family: "SF Pro Mono", 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, 'Hack Nerd Font Mono', 'IBM Plex Mono', 'Fira Code', monospace;;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: pre-wrap;
+	overflow: hidden;
+}
+
+a {
+	color: var(--color-foreground);
+}
+
+p + h2 {
+	padding-top: 0.3rem;
 }

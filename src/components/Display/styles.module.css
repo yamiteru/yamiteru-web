@@ -1,0 +1,10 @@
+.display {
+    font-family: "Inter Display", "Inter", "SF Pro Display", "SF Display", ui-sans-serif, -apple-system, "BlinkMacSystemFont", "Helvetica Neue","Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    white-space: pre-wrap;
+
+		@media (max-width: 1400px) {
+			font-size: 2rem;
+		}
+}

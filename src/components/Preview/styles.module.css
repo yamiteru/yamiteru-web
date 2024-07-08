@@ -1,0 +1,11 @@
+.preview {}
+
+.horizontal {
+    width: 100%;
+    height: auto;
+}
+
+.vertical{
+    width: auto;
+    height: 100%;
+}

@@ -1,27 +1,22 @@
 {
-  "name": "yamiteru",
+  "name": "yamiteru2024",
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start",
-    "script:images": "tsx scripts/images.ts",
     "check": "pnpm biome check --write"
-  },
-  "dependencies": {
-    "@solidjs/meta": "0.29.4",
-    "@solidjs/router": "0.13.5",
-    "@solidjs/start": "1.0.1",
-    "solid-js": "1.8.17",
-    "vinxi": "0.3.11"
-  },
-  "engines": {
-    "node": ">=18"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.0",
-    "sharp": "0.33.4",
-    "tsx": "4.12.0",
-    "typescript": "5.4.5"
+    "typescript": "5.5.3"
+  },
+  "dependencies": {
+    "@solidjs/start": "1.0.2",
+    "solid-js": "1.8.18",
+    "vinxi": "0.3.12"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

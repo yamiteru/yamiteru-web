@@ -1,0 +1,9 @@
+.switcher {
+	border-top: var(--border);
+	border-bottom: var(--border);
+	padding-top: var(--space);
+	padding-bottom: calc(5 * var(--space));
+	display: flex;
+	flex-direction: row;
+	gap: var(--space);
+}

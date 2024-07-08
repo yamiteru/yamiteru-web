@@ -9,7 +9,8 @@
 		"ignore": ["node_modules"],
 		"rules": {
 			"style": {
-				"noNonNullAssertion": "off"
+				"noNonNullAssertion": "off",
+				"noUnusedTemplateLiteral": "off"
 			},
 			"a11y": {
 				"useKeyWithClickEvents": "off",

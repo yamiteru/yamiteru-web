@@ -1,0 +1,95 @@
+.timeline {
+	width: 100%;
+	background-color: var(--color-background);
+}
+
+.content {
+	display: flex;
+	flex-direction: row;
+	height: calc(6.5 * var(--space));
+	border-bottom: var(--border);
+	padding: var(--space) var(--space) 0 var(--space);
+	overflow: hidden;
+}
+
+.period {
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+	&:nth-last-child(1) {
+		.year {
+			opacity: 100;
+		}
+	}
+
+	&:hover {
+		.selector {
+			transform: translateY(50%);
+		}
+	}
+}
+
+.active {
+	&:hover {
+		.selector {
+			transform: translateY(0%);
+		}
+	}
+
+	.selector {
+		transform: translateY(0%);
+	}
+} 
+
+.year {
+	width: 0px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+  justify-content: end;
+	position: absolute;
+	bottom: 0;
+
+	&:nth-child(1) {
+		left: 0;
+
+		.title {
+			left: 0;
+			transform: translateX(-50%);
+		}
+	}
+
+	&:nth-last-child(1) {
+		right: 0;
+		opacity: 0;
+
+		.title {
+			right: 0;
+			transform: translateX(50%);
+		}
+	}
+}
+
+.title {
+	position: absolute;
+	top: 0;
+	pointer-events: none;
+}
+
+.border {
+	height: calc(4 * var(--space));
+	border-left: var(--border);
+}
+
+.selector {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: calc(4 * var(--space));
+	transition: transform var(--transition-duration) var(--transition-function);
+	background-color: var(--color-foreground);
+	transform: translateY(100%);
+}
