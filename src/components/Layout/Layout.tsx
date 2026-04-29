@@ -9,7 +9,7 @@ export const Layout: Component<{
 		<div
 			classList={{
 				[styles.layout]: true,
-				[props.class]: !!props.class,
+				[props.class ?? ""]: !!props.class,
 			}}
 		>
 			{props.children}

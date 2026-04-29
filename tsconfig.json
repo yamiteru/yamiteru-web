@@ -9,8 +9,9 @@
     "jsxImportSource": "solid-js",
     "allowJs": true,
     "strict": true,
+    "skipLibCheck": true,
     "noEmit": true,
-    "types": ["vinxi/types/client"],
+    "types": ["vinxi/types/client", "node"],
     "isolatedModules": true,
     "paths": {
       "~/*": ["./src/*"]

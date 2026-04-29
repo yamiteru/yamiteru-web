@@ -6,11 +6,9 @@ import { Page } from "~/components/Page/Page";
 
 export default function App() {
 	return (
-		<>
-			<Page>
-				<General />
-				<Content />
-			</Page>
-		</>
+		<Page>
+			<General />
+			<Content />
+		</Page>
 	);
 }

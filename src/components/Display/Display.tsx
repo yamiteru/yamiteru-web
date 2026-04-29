@@ -9,7 +9,7 @@ export const Display: Component<{
 		<h2
 			classList={{
 				[styles.display]: true,
-				[props.class]: !!props.class,
+				[props.class ?? ""]: !!props.class,
 			}}
 		>
 			{props.children}

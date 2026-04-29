@@ -15,7 +15,7 @@ export const Card: Component<{
 			classList={{
 				[styles.card]: true,
 				[styles.link]: props.href !== undefined,
-				[props.class]: !!props.class,
+				[props.class ?? ""]: !!props.class,
 			}}
 		>
 			{props.children}

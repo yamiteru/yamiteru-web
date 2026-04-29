@@ -2,7 +2,7 @@
 	display: table;
 	width: 100%;
 	border-collapse: separate;
-  border-spacing: 0;
+	border-spacing: 0;
 }
 
 .head {
@@ -20,7 +20,7 @@
 }
 
 .row {
-  display: table-row;
+	display: table-row;
 
 	&:nth-last-child(1) {
 		&:not(&:nth-child(1)) {

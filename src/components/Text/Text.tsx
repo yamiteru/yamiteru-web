@@ -11,7 +11,7 @@ export const Text: Component<{
 		<p
 			classList={{
 				[styles.text]: true,
-				[props.class]: !!props.class,
+				[props.class ?? ""]: !!props.class,
 				[styles.hover]: props.active !== undefined,
 				[styles.active]: props.active,
 			}}

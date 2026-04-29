@@ -1,4 +1,4 @@
-import { Accessor, type Component } from "solid-js";
+import type { Component } from "solid-js";
 import { section, setSection } from "~/stores/section";
 import styles from "./styles.module.css";
 

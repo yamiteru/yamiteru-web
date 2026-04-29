@@ -41,14 +41,14 @@
 	.selector {
 		transform: translateY(0%);
 	}
-} 
+}
 
 .year {
 	width: 0px;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-  justify-content: end;
+	justify-content: end;
 	position: absolute;
 	bottom: 0;
 
