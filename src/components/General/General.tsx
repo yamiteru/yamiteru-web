@@ -19,13 +19,13 @@ export const General: Component = () => {
 					<br />
 					{"  "}titles: [
 					<br />
+					{"    "}"Principal Engineer",
+					<br />
 					{"    "}"Tech Lead",
 					<br />
 					{"    "}"Software Architect",
 					<br />
-					{"    "}"Software Engineer",
-					<br />
-					{"    "}"Web Designer"
+					{"    "}"Full-Stack Engineer"
 					<br />
 					{"  "}]
 					<br />
@@ -39,8 +39,9 @@ export const General: Component = () => {
 					[styles.links]: true,
 				}}
 			>
-				<Link href="https://x.com/the_yamiteru">Twitter</Link>
 				<Link href="https://github.com/yamiteru">Github</Link>
+				<Link href="https://linkedin.com/in/yamiteru">LinkedIn</Link>
+				<Link href="https://x.com/the_yamiteru">Twitter</Link>
 				<Link href="https://www.twitch.tv/the_yamiteru">Twitch</Link>
 			</div>
 

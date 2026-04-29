@@ -15,7 +15,7 @@
 		)
 	);
 	will-change: transform;
-	width: calc(100% - (3 * var(--head-width)) + 3px);
+	width: calc(100% - (4 * var(--head-width)) + 4px);
 	height: 100%;
 	display: grid;
 	grid-auto-columns: 1fr;
@@ -46,6 +46,12 @@
 		--percent: 100%;
 		--index: 2;
 		--offset: 3;
+	}
+
+	&[data-index="4"] {
+		--percent: 100%;
+		--index: 3;
+		--offset: 4;
 	}
 
 	&[data-active="true"] {

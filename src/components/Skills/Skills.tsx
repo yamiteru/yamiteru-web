@@ -1,66 +1,23 @@
 import type { Component } from "solid-js";
 import { For } from "solid-js";
+import { SPECTRA, YEAR_END, YEAR_START } from "~/data/spectrum";
+import { Spectrum } from "../Spectrum/Spectrum";
 import { Text } from "../Text/Text";
 import styles from "./styles.module.css";
 
-export const Skills: Component<{
-	title: string;
-	start: number;
-	end: number;
-	data: {
-		title: string;
-		start: number;
-		end: number;
-	}[];
-}> = (props) => {
-	const columns = [...new Array(props.end - props.start + 1)];
-	const sorted = props.data.sort(
-		(a, b) => b.end - b.start - (a.end - a.start) + (b.end - a.end),
-	);
-
+export const Skills: Component = () => {
 	return (
-		<table class={styles.skills}>
-			<thead class={styles.head}>
-				<tr class={styles.row}>
-					<th scope="col" class={styles.cell}>
-						<Text>Technology</Text>
-					</th>
-					<For each={columns}>
-						{(_, i) => (
-							<th class={styles.cell}>
-								<Text>{props.start + i()}</Text>
-							</th>
-						)}
-					</For>
-				</tr>
-			</thead>
+		<div class={styles.dashboard}>
+			<div class={styles.years}>
+				<Text>20{YEAR_START}</Text>
+				<Text>20{YEAR_END}</Text>
+			</div>
 
-			<tbody class={styles.body}>
-				<For each={sorted}>
-					{({ title, start, end }) => (
-						<tr class={styles.row}>
-							<th scope="row" class={styles.cell}>
-								<Text>{title}</Text>
-							</th>
-
-							<For each={columns}>
-								{(_, i) => {
-									const year = props.start + i();
-
-									return (
-										<th
-											classList={{
-												[styles.cell]: true,
-												[styles.active]: year >= start && year <= end,
-											}}
-										/>
-									);
-								}}
-							</For>
-						</tr>
-					)}
+			<div class={styles.grid}>
+				<For each={SPECTRA}>
+					{(s) => <Spectrum top={s.top} bottom={s.bottom} data={s.data} />}
 				</For>
-			</tbody>
-		</table>
+			</div>
+		</div>
 	);
 };

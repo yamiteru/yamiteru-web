@@ -1,47 +1,22 @@
-.skills {
-	display: table;
-	width: 100%;
-	border-collapse: separate;
-	border-spacing: 0;
+.dashboard {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space);
+	height: 100%;
 }
 
-.head {
-	display: table-header-group;
-
-	.cell {
-		&:nth-child(1) {
-			width: var(--width);
-		}
-	}
+.grid {
+	flex: 1;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: var(--space);
+	min-height: 0;
 }
 
-.body {
-	display: table-row-group;
-}
-
-.row {
-	display: table-row;
-
-	&:nth-last-child(1) {
-		&:not(&:nth-child(1)) {
-			.cell {
-				border-bottom: var(--border);
-			}
-		}
-	}
-}
-
-.cell {
-	display: table-cell;
-	padding: var(--space) 0;
+.years {
+	display: flex;
+	justify-content: space-between;
 	border-top: var(--border);
-	text-align: center;
-
-	&:nth-child(1) {
-		text-align: left;
-	}
-}
-
-.active {
-	background-color: var(--color-foreground);
+	padding-top: var(--space);
 }
