@@ -12,6 +12,7 @@ export const Section: Component<{
 			class={styles.section}
 			data-index={props.index}
 			data-active={section() >= props.index}
+			data-current={section() === props.index}
 		>
 			<div
 				class={styles.head}

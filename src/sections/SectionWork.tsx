@@ -1,8 +1,11 @@
 import type { Component } from "solid-js";
-import { createMemo, createSignal } from "solid-js";
+import { createMemo, createSignal, For } from "solid-js";
 import { Section } from "~/components/Section/Section";
 import { Timeline } from "~/components/Timeline/Timeline";
 import { Work } from "~/components/Work/Work";
+import styles from "./SectionWork.module.css";
+
+const formatYear = (year: number) => `20${year.toString().padStart(2, "0")}`;
 
 export const SectionWork: Component = () => {
 	const items = [
@@ -83,12 +86,28 @@ Replaced a third-party identity provider with first-party auth across two apps o
 
 	const [active, setActive] = createSignal(items.length - 1);
 	const item = createMemo(() => items[active()]);
+	const mobileItems = createMemo(() => items.slice().reverse());
 
 	return (
 		<Section title={"Work"} index={1}>
-			<Timeline items={items} active={active} setActive={setActive} />
+			<div class={styles.desktop}>
+				<Timeline items={items} active={active} setActive={setActive} />
 
-			<Work {...item()} />
+				<Work {...item()} />
+			</div>
+
+			<div class={styles.mobile}>
+				<For each={mobileItems()}>
+					{(work) => (
+						<Work
+							period={`${formatYear(work.from.year)} - ${formatYear(work.to.year)}`}
+							company={work.company}
+							titles={work.titles}
+							text={work.text}
+						/>
+					)}
+				</For>
+			</div>
 		</Section>
 	);
 };

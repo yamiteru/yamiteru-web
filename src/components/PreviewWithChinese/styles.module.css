@@ -12,6 +12,11 @@
 	pointer-events: none;
 }
 
+.layout.layout {
+	grid-template-columns: 1fr 1fr;
+	gap: 0;
+}
+
 .display {
 	writing-mode: vertical-lr;
 	color: white;
@@ -20,5 +25,9 @@
 	&:nth-child(2) {
 		text-align: right;
 		padding-left: 0;
+	}
+
+	@media (max-width: 760px) {
+		font-size: 1.25rem;
 	}
 }

@@ -12,6 +12,11 @@
 	display: block;
 	border-bottom: var(--border);
 	background-color: var(--color-background);
+
+	@media (max-width: 760px) {
+		flex: none;
+		aspect-ratio: 4 / 3;
+	}
 }
 
 .tick {
@@ -29,6 +34,11 @@
 	display: flex;
 	flex-direction: row;
 	gap: var(--space);
+
+	@media (max-width: 760px) {
+		flex-direction: column;
+		gap: calc(var(--space) / 3);
+	}
 }
 
 .entry {

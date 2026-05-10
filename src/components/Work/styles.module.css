@@ -1,5 +1,15 @@
 .work {
 	padding: var(--space);
+
+	@media (max-width: 760px) {
+		border-bottom: var(--border);
+		padding-right: 0;
+		padding-left: 0;
+
+		&:first-child {
+			border-top: var(--border);
+		}
+	}
 }
 
 .display {

@@ -1,6 +1,10 @@
 .eyes {
 	height: 100%;
 	padding: var(--space) 0;
+
+	@media (max-width: 760px) {
+		display: none;
+	}
 }
 
 .outside {
@@ -20,10 +24,6 @@
 .left,
 .right {
 	&:hover {
-		.label {
-			opacity: 1;
-		}
-
 		.pupil {
 			background-color: var(--color-foreground);
 		}
@@ -42,15 +42,6 @@
 	right: 0;
 	height: 62%;
 	aspect-ratio: 1 / 1;
-}
-
-.label {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	opacity: 0;
-	transition: opacity var(--transition-duration) var(--transition-function);
 }
 
 .inside {

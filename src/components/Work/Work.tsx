@@ -6,6 +6,7 @@ import { Text } from "../Text/Text";
 import styles from "./styles.module.css";
 
 export const Work: Component<{
+	period?: string;
 	titles: string[];
 	company: string;
 	text: string;
@@ -13,6 +14,7 @@ export const Work: Component<{
 	return (
 		<Layout class={styles.work}>
 			<Flex direction="column">
+				{props.period && <Text>{props.period}</Text>}
 				<Text>{props.company}</Text>
 				<Display class={styles.display}>
 					<For each={props.titles}>

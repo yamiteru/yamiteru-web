@@ -5,6 +5,10 @@
 	gap: 0;
 	padding: var(--space);
 	height: 100vh;
+
+	@media (max-width: 760px) {
+		display: none;
+	}
 }
 
 .part {

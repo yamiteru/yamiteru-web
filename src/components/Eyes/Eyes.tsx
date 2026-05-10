@@ -1,5 +1,4 @@
 import { type Component, createSignal, onCleanup, onMount } from "solid-js";
-import { Text } from "~/components/Text/Text";
 import styles from "./styles.module.css";
 
 const PUPIL_MAX = 318;
@@ -41,9 +40,6 @@ export const Eyes: Component = () => {
 		<div class={styles.eyes}>
 			<div class={styles.outside}>
 				<div class={styles.left}>
-					<div class={styles.label}>
-						<Text>Breathe in</Text>
-					</div>
 					<div
 						class={styles.inside}
 						style={{
@@ -60,9 +56,6 @@ export const Eyes: Component = () => {
 				</div>
 
 				<div class={styles.right}>
-					<div class={styles.label}>
-						<Text>Breathe out</Text>
-					</div>
 					<div
 						class={styles.inside}
 						style={{

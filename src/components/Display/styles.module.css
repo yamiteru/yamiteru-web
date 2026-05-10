@@ -10,4 +10,10 @@
 	@media (max-width: 1400px) {
 		font-size: 2rem;
 	}
+
+	@media (max-width: 760px) {
+		font-size: 1.45rem;
+		line-height: 1.08;
+		overflow-wrap: anywhere;
+	}
 }
